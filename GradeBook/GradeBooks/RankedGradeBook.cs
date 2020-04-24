@@ -6,9 +6,19 @@ namespace GradeBook.GradeBooks
 {
     public class RankedGradeBook : BaseGradeBook
     {
-        public RankedGradeBook(string name) : base(name)
+            public RankedGradeBook(string name) : base(name)
         {
             Type = GradeBookType.Ranked;
+        }
+        public virtual void CalculateStatistics(string name)
+        {
+            if (Students.Count < 5)
+                throw new InvalidOperationException("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.".");
+        }
+        public virtual void CalculateStudentStatistics(string name)
+        {
+            if (Students.Count < 5)
+                throw new InvalidOperationException("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.".");
         }
         public override char GetLetterGrade(double averageGrade)
         {
