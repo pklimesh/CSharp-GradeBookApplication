@@ -10,3 +10,16 @@ namespace GradeBook.GradeBooks
         }
     }
 }
+        public virtual char GetLetterGrade(double averageGrade)
+{
+            if (averageGrade >= 80)
+                return 'A';
+            else if (averageGrade >= 60)
+                return 'B';
+            else if (averageGrade >= 40)
+                return 'C';
+             else if (averageGrade >= 20)
+                return 'D';
+            else
+                return 'F';
+}
