@@ -3,7 +3,7 @@ using System;
 
 namespace GradeBook.UserInterfaces
 {
-    public abstract class StartingUserInterface
+    public static class StartingUserInterface
     {
         public static bool Quit = false;
         public static void CommandLoop()
